@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Hand Tracking Web</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<video id="camera" autoplay playsinline muted></video>
+<canvas id="canvas"></canvas>
+
+<main id="startScreen">
+  <div class="start-card">
+    <h1>HAND TRACKING</h1>
+    <div class="field">
+      <label for="cameraSelect">CAMERA</label>
+      <select id="cameraSelect"><option value="">Initialisation...</option></select>
+    </div>
+    <button id="startButton" class="primary-button">START</button>
+    <button id="fullscreenButton" class="secondary-button">FULLSCREEN</button>
+    <p id="startStatus" class="status"></p>
+  </div>
+</main>
+
+<section id="settingsPanel" aria-hidden="true">
+  <div class="settings-card">
+    <h2>Settings</h2>
+    <div class="setting">
+      <label for="displayMode">Display mode</label>
+      <select id="displayMode">
+        <option value="background">Background</option>
+        <option value="camera">Camera</option>
+      </select>
+    </div>
+    <div class="setting">
+      <label for="backgroundColor">Background color</label>
+      <div class="color-row">
+        <input id="backgroundColor" type="color" value="#000000">
+        <span id="colorValue">#000000</span>
+      </div>
+    </div>
+    <div class="setting">
+      <label for="settingsCameraSelect">Camera</label>
+      <select id="settingsCameraSelect"></select>
+    </div>
+    <button id="applyButton" class="primary-button">APPLY</button>
+  </div>
+</section>
+
+<div id="errorOverlay" class="error-overlay hidden">
+  <div class="error-card">
+    <h2>Hand Tracking</h2>
+    <p id="errorMessage"></p>
+    <button id="errorCloseButton" class="secondary-button">CLOSE</button>
+  </div>
+</div>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
